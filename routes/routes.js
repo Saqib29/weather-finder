@@ -1,13 +1,11 @@
-const constroller = require('../controller/mainController');
+const controller = require('../controller/mainController');
 
 
 function allRoutes(app) {
 
-    app.get('/', constroller().index);
+    app.get('/', controller().index);
 
-    app.post('/search', (req, res) => {
-        console.log(req.body);
-    });
+    app.post('/search', controller().search);
 
 }
 
