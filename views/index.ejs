@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <title>Search Weather</title>
 </head>
-<body class="bg-dark">
+<body class="bg-dark text-white">
 
 <nav class="navbar navbar-expand-lg container navbar-dark bg-dark">
   <div class="container-fluid mb-4">
@@ -40,6 +40,34 @@
             </div><!-- /.row -->
 
         </form>
+
+        <% if(weather){ %>
+            
+            <div class="container d-flex justify-content-center mt-4">
+                <div class="w-50 d-flex justify-content-sm-between">
+                    <span><strong>City:</strong> <p class="fw-light fs-5"><%= weather.name %></p></span>
+                    <span><strong>Country:</strong> <p class="fw-light fs-5"><%= weather.sys.country %></p></span>
+                    <span><strong>Temparatur:</strong> <p class="fw-light fs-5"><%= weather.main.temp %></p></span>
+                </div>
+            </div>
+             <hr>
+            <div class="text-center">
+                <span><Strong>Pressuree: </Strong><%= weather.main.pressure %></span>
+            </div>
+            <div class="text-center">
+                <span><Strong>Humidity: </Strong><%= weather.main.humidity %></span>
+            </div>
+            <div class="text-center mb-2">
+                <span><Strong>Visibility: </Strong><%= weather.visibility %></span>
+             </div>
+            <div class="text-center">
+                <span><Strong>Wind speed: </Strong><%= weather.wind.speed %>   </span>
+                <span><Strong>      deg: </Strong><%= weather.wind.deg %></span>
+            </div>
+        <% } else { %>
+            <p class="text-center">Search the name of a City to see weather details</p>
+        <% } %>
+
     </div>
 </body>
 </html>
