@@ -40,6 +40,8 @@
                 <span><Strong>Wind speed: </Strong><%= weather.wind.speed %> km/h </span><br>
                 <span><Strong> Dew point: </Strong><%= weather.wind.deg %>&#176;</span>
             </div>
+        <% } else if(!weather && !validate) { %>
+            <p class="text-center" style="color: #fefe22"> Please write a city name</p>
         <% } else { %>
             <p class="text-center">Search the name of a City to see weather details</p>
         <% } %>
