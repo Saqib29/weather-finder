@@ -17,6 +17,10 @@ function mainController(){
             }).catch(err => {
                 console.log(err);
             });
+        },
+
+        about(req, res){
+            res.render('about');
         }
     }
 }

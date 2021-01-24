@@ -7,6 +7,8 @@ function allRoutes(app) {
 
     app.post('/search', controller().search);
 
+    app.get('/about', controller().about);
+
 }
 
 module.exports = allRoutes;
